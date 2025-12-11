@@ -3,89 +3,192 @@
    원하는 색상 코드로 아래 4가지만 바꿔보세요.
    ------------------------------------------------------------- */
 :root {
-  --primary: #acecbf;      /* 메인 포인트 색상 */
-  --primary-dark: #7ff584; /* 호버/진한 포인트 */
-  --bg: #f7f9fc;           /* 전체 배경 색 */
-  --text: #222222;         /* 본문 글자 색 */
+  --primary: #4285f4;    /* 디자인 시트 제작을 위해 AI 활용했습니다*/
+  --primary-dark: #1a73e8; 
+  --bg: #ffffff;         
+  --text: #202124;        
+  --gray-text: #70757a; 
+  --border: #dadce0;     
 }
 /* ============================================================= */
 
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+  font-family: Arial, sans-serif; /* Google 폰트 선호 (Noto Sans KR 제거) */
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-}
-
-header {
-  padding: 2rem 1rem;
-  text-align: center;
-  background: var(--primary);
-  color: #ffffff;
-}
-header .subtitle { margin-top: .25rem; opacity: .95; }
-
-nav {
-  background: var(--primary-dark);
+  /* Google 홈페이지처럼 화면 중앙에 콘텐츠를 배치하기 위해 flexbox 사용 */
   display: flex;
-  gap: 1rem;
-  padding: .75rem 1rem;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 1. 상단 영역 (로그인, 앱, 이미지 링크) */
+header {
+  padding: 1.25rem 1.5rem;
+  text-align: right;
+  background: none; /* 배경 제거 */
+  color: var(--text);
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  align-items: center;
+}
+header a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.8125rem; /* 13px */
+  margin-left: 15px;
+  padding: 5px;
+  opacity: 0.85;
+}
+header a:hover { text-decoration: underline; }
+
+.google-apps-icon {
+  /* Google 앱 아이콘 스타일링 (예시) */
+  width: 16px;
+  height: 16px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="%235f6368" d="M6,8c1.1,0,2-0.9,2-2s-0.9-2-2-2S4,4.9,4,6S4.9,8,6,8z M12,20c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S10.9,20,12,20z M6,20c1.1,0,2-0.9,2-2s-0.9-2-2-2S4,16.9,4,18S4.9,20,6,20z M6,14c1.1,0,2-0.9,2-2s-0.9-2-2-2S4,10.9,4,12S4.9,14,6,14z M18,14c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S16.9,14,18,14z M18,8c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S16.9,8,18,8z M12,14c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S10.9,14,12,14z M18,20c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S16.9,20,18,20z M12,8c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S10.9,8,12,8z"/></svg>') no-repeat center center;
+  background-size: contain;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.google-sign-in-button {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 8px 15px;
+  margin-left: 10px;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+.google-sign-in-button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* 2. 검색 중앙 영역 */
+.main-content {
+  flex-grow: 1; /* footer를 아래로 밀어내기 위해 사용 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  padding-bottom: 100px; /* 검색창이 너무 중앙에 붙지 않도록 조정 */
+}
+.logo-area {
+  margin-bottom: 25px;
+}
+.logo-area img {
+  width: 272px; /* Google 로고 크기 */
+  height: 92px;
+}
+
+/* 검색창 스타일링 */
+.search-form {
+  width: 100%;
+  max-width: 584px; /* Google 검색창의 일반적인 최대 너비 */
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 0 14px;
+  height: 44px; /* 검색창 높이 */
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.search-input-wrapper:hover {
+  box-shadow: 0 1px 6px rgba(32,33,36,.28);
+  border-color: rgba(223,225,229,0);
+}
+.search-form input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  font-size: 1rem;
+}
+.search-icon {
+  /* 돋보기 아이콘 (SVG) */
+  margin-right: 10px;
+  opacity: 0.5;
+}
+.microphone-icon, .camera-icon {
+  /* 마이크, 카메라 아이콘 (SVG) */
+  margin-left: 10px;
+  cursor: pointer;
+}
+.search-buttons {
+  text-align: center;
+}
+.search-buttons button {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 0.875rem; /* 14px */
+  margin: 11px 4px;
+  padding: 0 16px;
+  line-height: 27px;
+  height: 36px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.search-buttons button:hover {
+  border: 1px solid #dadce0;
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+/* 3. 하단 푸터 (Footer) */
+footer {
+  text-align: left;
+  padding: 0 20px;
+  background: #f2f2f2; /* 푸터 배경은 연한 회색 */
+  color: var(--gray-text);
+  font-size: 0.875rem; /* 14px */
+}
+.footer-country {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.footer-links div {
+  display: flex;
   flex-wrap: wrap;
 }
-nav a {
-  color: #ffffff;
+.footer-links a {
+  color: var(--gray-text);
   text-decoration: none;
-  font-weight: 600;
-  padding: .25rem .5rem;
+  padding: 0 12px;
 }
-nav a:hover { text-decoration: underline; }
+.footer-links a:hover { text-decoration: underline; }
 
-.container {
-  max-width: 900px;
-  margin: 1.5rem auto;
-  padding: 1rem;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+/* 미디어 쿼리 조정 */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links div {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
 }
-
-section { margin-bottom: 1rem; }
-h1, h2, h3 { margin: .2rem 0 .6rem; }
-
-.contact-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: .5rem;
-  margin-top: 1rem;
-}
-input, textarea {
-  width: 100%;
-  padding: .6rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font: inherit;
-}
-button {
-  padding: .6rem .8rem;
-  border: none;
-  border-radius: 6px;
-  background: var(--primary);
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-}
-button:hover { background: var(--primary-dark); }
-
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  color: #666;
-}
-
 @media (max-width: 600px) {
-  header h1 { font-size: 1.25rem; }
-  .container { margin: 1rem; padding: .75rem; }
+  header { padding: 1rem; }
+  .logo-area img { width: 200px; height: 68px; }
+  .search-form { padding: 0 15px; }
+  .main-content { padding-bottom: 50px; }
 }
