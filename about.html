@@ -3,39 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>인터넷활용 실습 템플릿</title>
+  <title>이하은 소개 | 인터넷활용 실습</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1>이름: 이하은</h1>
-  <p class="subtitle">haeunlee</p>
-</header>
-<nav>
-  <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="contact.html">Contact</a>
-</nav>
-<main class="container">
-<section>
-  <h2>About Me</h2>
-  <p>haeunlee</p>
-  <h3>학력</h3>
-  <ul>
-    <li>광운대학교</li>
+  <a href="index.html" class="google-sign-in-button">Home</a> 
+</header>
 
-  </ul>
-  <h3>관심 분야</h3>
-  <ul>
-    <li>html</li>
-    <li>미디어</li>
-  </ul>
-</section>
-</main>
+<div class="main-content">
+  
+  <h1 class="main-title">About Me</h1>
+  
+  <section class="content-wrapper">
+    <h2>이하은 (Haeun Lee)</h2>
+    
+    <p class="description-text">
+        안녕하세요! 이하은입니다. 현재 광운대학교에 재학 중이며, 웹 기술과 미디어 콘텐츠 제작에 깊은 관심을 가지고 있습니다.
+        이 페이지는 '인터넷활용 실습' 수업을 통해 제작되었으며, HTML, CSS, JavaScript를 이용한 동적 웹페이지 구현 능력을 키우고 있습니다.
+    </p>
+
+    <hr style="border: 0; border-top: 1px solid var(--border); margin: 25px 0;">
+
+    <div class="info-section">
+        <h3>🎓 학력</h3>
+        <ul class="clean-list">
+          <li>광운대학교 재학 중</li>
+        </ul>
+        
+        <h3>💡 관심 분야</h3>
+        <ul class="interest-list">
+          <li>HTML / CSS / JavaScript</li>
+          <li>미디어 콘텐츠 제작 및 기획</li>
+          <li>데이터 시각화</li>
+        </ul>
+    </div>
+  </section>
+</div>
+
 <footer>
-  <small>&copy; <span id="year"></span> 이름: 이하은</small>
+  <div class="footer-country">이하은 | Internet Utilization Class</div>
+  <div class="footer-links">
+    <div>
+      <a href="mailto:haeunlee1234@gmail.com">이메일 문의</a>
+    </div>
+  </div>
 </footer>
-<script src="script.js"></script>
-</body>
-</html>
+<script>
+  // 푸터 연도 표시 스크립트 (기존 코드에서 가져옴)
+  // 이 스크립트를 사용하려면 <footer> 안에 <span id="year"></span> 요소가 있어야 합니다.
+  const yearSpan = document.createElement('span');
+  yearSpan.id = 'year';
+  const smallTag = document.createElement('small');
+  smallTag.innerHTML = '&copy; ';
+  smallTag.appendChild(yearSpan);
+  smallTag.innerHTML += ' 이름: 이하은';

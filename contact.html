@@ -3,40 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>인터넷활용 실습 템플릿</title>
+  <title>이하은 연락처 | 인터넷활용 실습</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1>이름: 이하은</h1>
-  <p class="subtitle">haeunlee</p>
-</header>
-<nav>
-  <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="contact.html">Contact</a>
-</nav>
-<main class="container">
-<section>
-  <h2>Contact</h2>
-  <ul>
-    <li>이메일: haeunlee1234@gmail.com</li>
-    <li>GitHub: https://github.com/haeunlee1234-ui/haeunlee.git</li>
-  </ul>
-  <!-- 아래는 정말 기본 예시 폼입니다. JS 없이도 동작하지 않아도 되며, 형태만 제공합니다. -->
-  <form class="contact-form" onsubmit="return false;">
-    <label>이름</label>
-    <input type="text" placeholder="이름을 입력하세요">
-    <label>메시지</label>
-    <textarea rows="4" placeholder="메시지를 입력하세요"></textarea>
-    <button type="submit">보내기 (동작X, 형태만)</button>
-  </form>
-</section>
-</main>
+  <a href="index.html" class="google-sign-in-button">Home</a> 
+</header>
+
+<div class="main-content">
+  
+  <h1 class="main-title">Contact Me</h1>
+
+  <section class="content-wrapper contact-page">
+    <h2>연락처 정보</h2>
+    
+    <ul class="contact-info-list">
+      <li>
+        <strong>📧 이메일:</strong> 
+        <a href="mailto:haeunlee1234@gmail.com">haeunlee1234@gmail.com</a>
+      </li>
+      <li>
+        <strong>🖥️ GitHub:</strong> 
+        <a href="https://github.com/haeunlee1234-ui/haeunlee.git" target="_blank">haeunlee1234-ui/haeunlee.git</a>
+      </li>
+    </ul>
+
+    <hr>
+    
+    <h2>메시지 보내기</h2>
+    <form class="contact-form" onsubmit="return false;">
+      <label for="name">이름</label>
+      <input type="text" id="name" placeholder="이름을 입력하세요">
+      
+      <label for="message">메시지</label>
+      <textarea id="message" rows="4" placeholder="메시지를 입력하세요"></textarea>
+      
+      <button type="submit" class="submit-button">보내기 (형태만)</button>
+    </form>
+  </section>
+</div>
+
 <footer>
-  <small>&copy; <span id="year"></span> 이름: 이하은</small>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
+  <div class="footer-country">이하은 | Internet Utilization Class</div>
+  <div class="footer-
