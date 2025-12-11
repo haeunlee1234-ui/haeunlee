@@ -3,34 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>인터넷활용 실습 템플릿</title>
+  <title>이하은 홈 | 인터넷활용 실습</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1>이름: 이하은</h1>
-  <p class="subtitle">haeunlee</p>
-</header>
-<nav>
-  <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="contact.html">Contact</a>
-</nav>
-<main class="container">
-<section>
-  <h2>홈</h2>
-  <p>안녕하세요! 저는 <strong>이름: 이하은</strong> 입니다.</p>
-  <ul>
-    <li>학과/학번: 미디어커뮤니케이션학부/2025323027</li>
-    <li>관심 분야: 미디어</li>
-    <li>기술 스택: HTML, CSS, JS</li>
-  </ul>
-</section>
-</main>
+  <a href="index.html" class="google-sign-in-button">Home</a> 
+</header>
+
+<div class="main-content">
+  
+  <h1 class="main-title">안녕하세요! 이하은 입니다.</h1>
+  
+  <section class="content-wrapper home-intro">
+    <h2>Welcome to My Page</h2>
+    
+    <p style="font-size: 1.1rem; margin-bottom: 25px;">
+        이 페이지는 광운대학교 인터넷활용 실습을 위해 제작되었습니다. 
+        웹 기술 학습에 대한 흥미와 관심을 보여주는 공간입니다.
+    </p>
+
+    <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+    
+    <h3>핵심 정보</h3>
+    <ul class="clean-list">
+      <li><strong>학과/학번:</strong> 미디어커뮤니케이션학부 / 2025323027</li>
+      <li><strong>관심 분야:</strong> 미디어, 프론트엔드 웹 개발</li>
+      <li><strong>기술 스택:</strong> HTML, CSS, JavaScript (JS)</li>
+    </ul>
+    
+    <p style="margin-top: 30px;">
+        <a href="portfolio.html" class="submit-button" style="text-decoration: none;">포트폴리오 보러가기</a>
+    </p>
+  </section>
+</div>
+
 <footer>
-  <small>&copy; <span id="year"></span> 이름: 이하은</small>
+  <div class="footer-country">이하은 | Internet Utilization Class</div>
+  <div class="footer-links">
+    <div>
+      <a href="mailto:haeunlee1234@gmail.com">이메일 문의</a>
+    </div>
+  </div>
 </footer>
-<script src="script.js"></script>
+<script>
+  const yearSpan = document.createElement('span');
+  yearSpan.id = 'year';
+  
+  const footerCountry = document.querySelector('.footer-country');
+  if (footerCountry && !document.getElementById('year')) {
+      footerCountry.innerHTML = `&copy; <span id="year">${new Date().getFullYear()}</span> 이하은 | Internet Utilization Class`;
+  } else if (document.getElementById('year')) {
+      document.getElementById('year').textContent = new Date().getFullYear();
+  }
+</script>
 </body>
 </html>
