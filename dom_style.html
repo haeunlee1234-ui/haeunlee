@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <title>DOM 스타일 변환 실험기</title>
+    <title>DOM 스타일 변환</title>
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
@@ -35,17 +36,24 @@
             background -color: #ddd;
         }
     </style>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 </head>
 
 <body>
     <p id="target">이 문장의 스타일을 바꿔보세요!</p>
 
     <br>
-    
+
     <button onclick="changeColor()">글자색 변경</button>
     <button onclick="changeSize()">크게 보기</button>
     <button onclick="changebackground()">배경 강조</button>
     <button onclick="toggleVisibility()">숨기기/보이기</button>
 
 </body>
+
 </html>
